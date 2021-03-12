@@ -14,6 +14,12 @@ function getShares() {
         }).catch(err => console.error(err))
 }
 
+function deleteShare(id) {
+    axios.delete("http://localhost:8080/delete/" + id)
+        .then(() => getShares())
+        .catch(err => console.error(err));
+}
+
 function renderShare(share) {
 
     const newColumn = document.createElement("section");
@@ -46,6 +52,14 @@ function renderShare(share) {
     const shareFooter = document.createElement("section");
     shareFooter.className = "card-footer"
     newShare.appendChild(shareFooter);
+
+    const deleteShareButton = document.createElement("button");
+    deleteShareButton.className = "btn btn-primary";
+    deleteShareButton.innerText = "Delete";
+    deleteShareButton.addEventListener('click', function () {
+        deleteShare(share.id);
+    });
+    shareFooter.appendChild(deleteShareButton);
 
     return newColumn;
 }
