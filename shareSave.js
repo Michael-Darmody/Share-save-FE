@@ -1,6 +1,8 @@
 'use strict'
 
 const output = document.getElementById("output");
+const modalBg = document.querySelector(".modalBg")
+let id
 
 function getShares() {
     axios.get("http://localhost:8080/getShares")
@@ -64,7 +66,17 @@ function renderShare(share) {
     const editShareButton = document.createElement("button");
     editShareButton.className = "btn btn-primary";
     editShareButton.innerText = "Edit";
+    editShareButton.addEventListener('click', function () {
+        modalBg.classList.add('bg-active');
+        id = share.id;
+    })
     shareFooter.appendChild(editShareButton);
+
+    const closeModal = document.getElementById("modalClose");
+    closeModal.addEventListener('click', function () {
+        modalBg.classList.remove('bg-active');
+    })
+
     return newColumn;
 }
 
@@ -85,5 +97,23 @@ document.getElementById("shareForm").addEventListener('submit', function (event)
         })
         .catch(err => console.error(err));
 });
+
+document.querySelector(".shareModal").addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = {
+        name: this.modalName.value,
+        amount: this.modalAmount.value,
+        price: this.modalPrice.value
+    };
+
+    axios.put("http://localhost:8080/update/" + id, data)
+        .then(() => {
+            this.reset();
+            modalBg.classList.remove('bg-active');
+            getShares();
+        })
+        .catch(err => console.error(err));
+})
 
 getShares();
