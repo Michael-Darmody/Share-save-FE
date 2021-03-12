@@ -14,6 +14,12 @@ function getShares() {
         }).catch(err => console.error(err))
 }
 
+function deleteShare(id) {
+    axios.delete("http://localhost:8080/delete/" + id)
+        .then(() => getShares())
+        .catch(err => console.error(err));
+}
+
 function renderShare(share) {
 
     const newColumn = document.createElement("section");
