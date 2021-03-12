@@ -61,6 +61,10 @@ function renderShare(share) {
     });
     shareFooter.appendChild(deleteShareButton);
 
+    const editShareButton = document.createElement("button");
+    editShareButton.className = "btn btn-primary";
+    editShareButton.innerText = "Edit";
+    shareFooter.appendChild(editShareButton);
     return newColumn;
 }
 

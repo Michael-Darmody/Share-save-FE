@@ -19,7 +19,7 @@
         <div class="row">
             <section class="col-2">
                 <form id="shareForm">
-                    <label for="personName">Share Bought:</label>
+                    <label for="shareName">Share Bought:</label>
                     <input name="name" id="shareName" class="form-control" autofocus>
                     <label for="shareAmount" class="form-label">Amount:</label>
                     <input type="number" name="amount" id="shareAmount" class="form-control" min="0">
@@ -30,6 +30,29 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </section>
+            <section class="col-3">
+                <form id="shareModel">
+                    <section class="form-group">
+                        <label for="shareName">Share Bought:</label>
+                        <input name="name" class="form-control" id="shareName" placeholder="Enter Share name:"
+                            autocomplete="off">
+                    </section>
+                    <section class="form-group">
+                        <label for="shareAmount">Amount:</label>
+                        <input type="number" name="amount" class="form-control" id="shareAmount"
+                            placeholder="Enter Share amount:" autocomplete="off">
+                    </section>
+                    <section class="form-group">
+                        <label for="sharePrice">Price:</label>
+                        <input type="number" name="price" class="form-control" id="sharePrice"
+                            placeholder="Enter Share price:" autocomplete="off">
+                    </section>
+                    <br>
+                    <button class="btn btn-primary" type="submit">Update</button>
+                    <span class="btn btn-primary">X</span>
+                </form>
+            </section>
+
             <section class="col-10">
                 <div id="output" class="m-2 card-group row row-cols-4 g-4">
                 </div>
