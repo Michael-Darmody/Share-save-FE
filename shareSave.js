@@ -5,6 +5,7 @@ const output = document.getElementById("output");
 function getShares() {
     axios.get("http://localhost:8080/getShares")
         .then(res => {
+            output.innerHTML = "";
             const shares = res.data;
             shares.forEach(share => {
                 const newShare = renderShare(share);
@@ -48,5 +49,23 @@ function renderShare(share) {
 
     return newColumn;
 }
+
+document.getElementById("shareForm").addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = {
+        name: this.name.value,
+        amount: this.amount.value,
+        price: this.price.value
+    };
+
+    axios.post("http://localhost:8080/create", data)
+        .then(() => {
+            this.reset();
+            this.name.focus();
+            getShares();
+        })
+        .catch(err => console.error(err));
+});
 
 getShares();
