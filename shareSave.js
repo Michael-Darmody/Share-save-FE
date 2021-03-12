@@ -53,6 +53,14 @@ function renderShare(share) {
     shareFooter.className = "card-footer"
     newShare.appendChild(shareFooter);
 
+    const deleteShareButton = document.createElement("button");
+    deleteShareButton.className = "btn btn-primary";
+    deleteShareButton.innerText = "Delete";
+    deleteShareButton.addEventListener('click', function () {
+        deleteShare(share.id);
+    });
+    shareFooter.appendChild(deleteShareButton);
+
     return newColumn;
 }
 
