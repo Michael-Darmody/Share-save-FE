@@ -19,12 +19,14 @@
         <section class="row">
             <div class="col-2">
                 <form id="shareForm">
-                    <label for="shareName">Share Bought:</label>
-                    <input name="name" id="shareName" class="form-control" autofocus>
-                    <label for="shareAmount" class="form-label">Amount:</label>
-                    <input type="number" name="amount" id="shareAmount" class="form-control" min="0">
-                    <label for="sharePrice" class="form-label">Price:</label>
-                    <input type="number" name="price" id="sharePrice" class="form-control" min="0">
+                    <label class="form-labels" for="shareName">Share Bought:</label>
+                    <input name="name" id="shareName" class="form-control" autofocus placeholder="Enter Share name:">
+                    <label class="form-labels" for="shareAmount">Amount:</label>
+                    <input type="number" name="amount" id="shareAmount" class="form-control" min="0"
+                        placeholder="Amount bought:">
+                    <label class="form-labels" for="sharePrice">Price:</label>
+                    <input type="number" name="price" id="sharePrice" class="form-control" min="0"
+                        placeholder="Enter Share price:">
                     <br>
                     <button type="reset" class="btn btn-primary">Reset</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
