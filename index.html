@@ -21,12 +21,12 @@
                 <form id="shareForm">
                     <label class="form-labels" for="shareName">Share Bought:</label>
                     <input name="name" id="shareName" class="form-control" autofocus placeholder="Enter Share name:">
-                    <label class="form-labels" for="shareAmount">Amount:</label>
+                    <label class="form-labels" for="shareAmount" required>Amount:</label>
                     <input type="number" name="amount" id="shareAmount" class="form-control" min="0"
-                        placeholder="Amount bought:">
+                        placeholder="Amount bought:" required>
                     <label class="form-labels" for="sharePrice">Price:</label>
-                    <input type="number" name="price" id="sharePrice" class="form-control" min="0"
-                        placeholder="Enter Share price:">
+                    <input type="number" name="price" id="sharePrice" class="form-control" min="0" placeholder="£0.00"
+                        step="0.01" required>
                     <br>
                     <button type="reset" class="btn btn-primary">Reset</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -48,7 +48,7 @@
                         <section class="form-group">
                             <label for="sharePrice">Price:</label>
                             <input type="number" name="modalPrice" class="form-control" id="sharePrice"
-                                placeholder="Enter Share price:" autocomplete="off">
+                                placeholder="£0.00" autocomplete="off" step="0.01">
                         </section>
                         <br>
                         <button class="btn btn-primary" type="submit">Update</button>
