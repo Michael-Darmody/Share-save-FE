@@ -1,0 +1,77 @@
+.modalBg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color:rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibilty 0s opacity 0.5s;
+    overflow: auto;
+}
+
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+   
+  }
+
+.shareModal{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.innerModal{
+   background-color: white;
+   padding: 10px;
+
+}
+
+#modalClose{
+    position: absolute;
+    top: 0.5px;
+    right: 10px;
+}
+
+header{
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.form-labels{
+    font-weight:bold;
+}
+
+.container{
+    position:relative; left:80px; top:5px;
+}
